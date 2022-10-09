@@ -1,0 +1,19 @@
+class GreenZoneIndex:
+    def __init__(self, territory_name, territory_area, green_zones):
+        
+        self.territory_name = territory_name
+        self.territory_area = territory_area 
+        self.green_zones = green_zones
+
+        self.green_index = self.calculate_green_index()
+
+    def calculate_green_index(self):
+        return 100 * round(sum(self.green_zones)/self.territory_area, 4)
+
+territory_name = "Пушкин"
+territory_area = 28676
+green_zones = [302, 487, 420, 325, 471, 363, 404]
+
+value = GreenZoneIndex(territory_name, territory_area, green_zones)
+
+print(f"Индекс озеленения территории {value.territory_name} равен {value.green_index}%")
