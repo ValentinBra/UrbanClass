@@ -43,7 +43,7 @@ def filter_min_green_index(new_list):
     porog = 0.1
 
     for i in new_list:
-        if i.green_index < porog:
+        if i.green_index < porog*100:
             mn += 1
     return mn
 
